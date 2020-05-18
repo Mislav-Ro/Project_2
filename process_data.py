@@ -46,5 +46,7 @@ df.drop_duplicates(inplace=True)
 # check number of duplicates
 # df.duplicated().sum()
 
+df.loc[df["related"] ==2, "related"] = 1
+
 engine = db.create_engine('sqlite:///MainTable.db')
 df.to_sql('info', engine, index=False)
